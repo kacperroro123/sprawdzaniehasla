@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+</head>
+<body>
+    <label for="haslo">Wpisz swoje haslo: </label> <input type="password" id="haslo" name="haslo">
+    <button onclick="sila()">sprawdz haslo</button>
+    <div id="wynik"></div>
+
+    <script> 
+    function sila(){ 
+        var haslo = document.getElementById("haslo").value;
+        var wynik = document.getElementById("wynik");
+        if (haslo == "") { 
+            wynik.innerHTML = '<span style="color: red;">Wprowadz haslo</span>';
+
+        } else if (haslo.length >= 7 && /\d/.test(haslo)) { 
+            wynik.innerHTML = '<span style="color: green">Twoje haslo jest dobre</span>';
+        } else { 
+            wynik.innerHTML = '<span style="color: orange">Twoje haslo jest slabe</span>';
+        }
+        }
+
+    </script>
+</body>
+</html>
